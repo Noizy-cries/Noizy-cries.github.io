@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Bilal | Full-Stack & AI Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .text-gradient { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tighter">M<span class="text-sky-400">B</span>.</div>
+        <div class="space-x-8 hidden md:flex">
+            <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
+            <a href="#skills" class="hover:text-sky-400 transition">Skills</a>
+            <a href="#certs" class="hover:text-sky-400 transition">Certifications</a>
+        </div>
+    </nav>
+
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <h2 class="text-sky-400 font-mono mb-4 text-lg">System.Ready();</h2>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Muhammad <span class="text-gradient">Bilal</span></h1>
+        <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mb-10">
+            Full-Stack .NET Engineer & AI Specialist. Building secure architectures and advanced RAG pipelines.
+        </p>
+        <div class="flex gap-4">
+            <a href="#projects" class="bg-sky-500 hover:bg-sky-600 px-8 py-3 rounded-full font-bold transition">View Projects</a>
+            <a href="https://github.com/Noizy-cries" target="_blank" class="glass px-8 py-3 rounded-full font-bold hover:bg-slate-800 transition">GitHub</a>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-8 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-sky-500 pl-4">Featured Work</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <div class="glass p-8 rounded-2xl hover:translate-y-[-5px] transition duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <i class="fa-solid fa-shield-halved text-3xl text-sky-400"></i>
+                    <span class="text-xs font-mono text-slate-500">.NET 8 / JWT</span>
+                </div>
+                <h4 class="text-xl font-bold mb-2">SafeVault Secure API</h4>
+                <p class="text-slate-400 mb-6">Secure ASP.NET Core API with RBAC, BCrypt hashing, and SQLi protection.</p>
+                <div class="flex gap-2">
+                    <span class="text-xs glass px-3 py-1 rounded-full">Security</span>
+                    <span class="text-xs glass px-3 py-1 rounded-full">Backend</span>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl hover:translate-y-[-5px] transition duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <i class="fa-solid fa-calendar-check text-3xl text-indigo-400"></i>
+                    <span class="text-xs font-mono text-slate-500">Blazor / WASM</span>
+                </div>
+                <h4 class="text-xl font-bold mb-2">EventEase Application</h4>
+                <p class="text-slate-400 mb-6">Full-stack management system with custom AppState and real-time dashboard stats.</p>
+                <div class="flex gap-2">
+                    <span class="text-xs glass px-3 py-1 rounded-full">WASM</span>
+                    <span class="text-xs glass px-3 py-1 rounded-full">Frontend</span>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl hover:translate-y-[-5px] transition duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <i class="fa-solid fa-brain text-3xl text-purple-400"></i>
+                    <span class="text-xs font-mono text-slate-500">IBM / Python</span>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Advanced RAG Framework</h4>
+                <p class="text-slate-400 mb-6">Vector Database implementation for high-fidelity LLM context retrieval.</p>
+                <div class="flex gap-2">
+                    <span class="text-xs glass px-3 py-1 rounded-full">AI</span>
+                    <span class="text-xs glass px-3 py-1 rounded-full">VectorDB</span>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl hover:translate-y-[-5px] transition duration-300">
+                <div class="flex justify-between items-start mb-4">
+                    <i class="fa-solid fa-users-gear text-3xl text-emerald-400"></i>
+                    <span class="text-xs font-mono text-slate-500">ASP.NET / Copilot</span>
+                </div>
+                <h4 class="text-xl font-bold mb-2">User Management API</h4>
+                <p class="text-slate-400 mb-6">RESTful API featuring custom middleware pipeline and AI-accelerated dev logic.</p>
+                <div class="flex gap-2">
+                    <span class="text-xs glass px-3 py-1 rounded-full">Middleware</span>
+                    <span class="text-xs glass px-3 py-1 rounded-full">API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-slate-900/50 px-8">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-16 underline decoration-sky-500 underline-offset-8">Technical Proficiency</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="font-bold text-sky-400 mb-2">Core</h5>
+                    <ul class="text-slate-400 space-y-1">
+                        <li>C# / .NET 8</li>
+                        <li>Blazor WASM</li>
+                        <li>ASP.NET Web API</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sky-400 mb-2">AI / Data</h5>
+                    <ul class="text-slate-400 space-y-1">
+                        <li>Advanced RAG</li>
+                        <li>Vector DBs</li>
+                        <li>LLM Evaluation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sky-400 mb-2">Backend</h5>
+                    <ul class="text-slate-400 space-y-1">
+                        <li>JWT / Auth</li>
+                        <li>SQL / NoSQL</li>
+                        <li>Middleware</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sky-400 mb-2">Dev Tools</h5>
+                    <ul class="text-slate-400 space-y-1">
+                        <li>Git / Docker</li>
+                        <li>GitHub Copilot</li>
+                        <li>Cursor.sh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="py-24 px-8 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-8 text-center">Verified Certifications</h3>
+        <div class="space-y-4">
+            <div class="glass p-4 rounded-lg flex items-center justify-between">
+                <span>Advanced RAG with Vector Databases</span>
+                <span class="text-sky-400 font-bold">IBM</span>
+            </div>
+            <div class="glass p-4 rounded-lg flex items-center justify-between">
+                <span>Back-End Development with .NET</span>
+                <span class="text-sky-400 font-bold">Microsoft</span>
+            </div>
+            <div class="glass p-4 rounded-lg flex items-center justify-between">
+                <span>Performance Optimization & Scalability</span>
+                <span class="text-sky-400 font-bold">Microsoft</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>© 2026 Muhammad Bilal. Built with AI-First Methodology.</p>
+    </footer>
+
+</body>
+</html>
