@@ -11,12 +11,13 @@ body { font-family: 'Inter', sans-serif; background:#020617; color:#e2e8f0; }
 .glow { box-shadow: 0 0 40px rgba(56,189,248,0.25); }
 .gradient { background: linear-gradient(135deg,#38bdf8,#6366f1,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 .card:hover { transform: translateY(-10px) scale(1.02); }
+.spinner { border: 2px solid rgba(255,255,255,0.2); border-top: 2px solid #38bdf8; border-radius: 50%; width: 18px; height: 18px; animation: spin 0.8s linear infinite; display:inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="fixed w-full backdrop-blur-xl bg-white/5 border-b border-white/10 px-8 py-4 flex justify-between z-50">
 <h1 class="font-bold text-xl">MB<span class="text-sky-400">.</span></h1>
 <div class="space-x-6 hidden md:block">
@@ -26,95 +27,139 @@ body { font-family: 'Inter', sans-serif; background:#020617; color:#e2e8f0; }
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
 <p class="text-sky-400 mb-4">AI • Backend • Systems</p>
 <h1 class="text-6xl md:text-8xl font-extrabold mb-6">Muhammad <span class="gradient">Bilal</span></h1>
 <p class="max-w-xl text-slate-400 text-lg mb-8">I design high-performance backend systems and AI-powered applications with real-world impact.</p>
-
 <div class="flex gap-4">
 <a href="#projects" class="px-8 py-3 bg-sky-500 rounded-full glow">View Work</a>
 <a href="#contact" class="px-8 py-3 border border-white/20 rounded-full">Hire Me</a>
 </div>
-
-<!-- animated blob -->
 <div class="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl top-20 animate-pulse"></div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="py-24 px-8 max-w-6xl mx-auto">
 <h2 class="text-4xl font-bold mb-16">Featured Projects</h2>
-
 <div class="grid md:grid-cols-2 gap-10">
-
 <div class="card transition duration-500 p-8 rounded-2xl bg-white/5 border border-white/10">
 <h3 class="text-xl font-bold mb-2">SafeVault API</h3>
 <p class="text-slate-400 mb-4">Enterprise-level secure authentication system using JWT & role-based access.</p>
 <span class="text-xs text-sky-400">.NET • Security</span>
 </div>
-
 <div class="card transition duration-500 p-8 rounded-2xl bg-white/5 border border-white/10">
 <h3 class="text-xl font-bold mb-2">AI RAG System</h3>
 <p class="text-slate-400 mb-4">Context-aware AI retrieval system powered by vector embeddings.</p>
 <span class="text-xs text-purple-400">AI • Vector DB</span>
 </div>
-
 <div class="card transition duration-500 p-8 rounded-2xl bg-white/5 border border-white/10">
 <h3 class="text-xl font-bold mb-2">EventEase</h3>
 <p class="text-slate-400 mb-4">Modern dashboard with real-time stats using Blazor WebAssembly.</p>
 <span class="text-xs text-indigo-400">Frontend • WASM</span>
 </div>
-
 <div class="card transition duration-500 p-8 rounded-2xl bg-white/5 border border-white/10">
 <h3 class="text-xl font-bold mb-2">User Management API</h3>
 <p class="text-slate-400 mb-4">Scalable backend with middleware pipelines and optimized queries.</p>
 <span class="text-xs text-emerald-400">API • Backend</span>
 </div>
-
 </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="py-24 bg-white/5">
 <div class="max-w-6xl mx-auto text-center">
 <h2 class="text-4xl font-bold mb-16">Skills</h2>
-
 <div class="grid md:grid-cols-4 gap-8">
-
 <div class="p-6 rounded-xl bg-white/5 border border-white/10">
 <h4 class="text-sky-400 font-bold mb-2">Backend</h4>
 <p>.NET, APIs, Auth</p>
 </div>
-
 <div class="p-6 rounded-xl bg-white/5 border border-white/10">
 <h4 class="text-purple-400 font-bold mb-2">AI</h4>
 <p>RAG, LLMs, Vector DB</p>
 </div>
-
 <div class="p-6 rounded-xl bg-white/5 border border-white/10">
 <h4 class="text-indigo-400 font-bold mb-2">Frontend</h4>
 <p>Blazor, UI/UX</p>
 </div>
-
 <div class="p-6 rounded-xl bg-white/5 border border-white/10">
 <h4 class="text-emerald-400 font-bold mb-2">Tools</h4>
 <p>Docker, Git, Copilot</p>
 </div>
-
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT WITH AJAX + UPGRADES -->
 <section id="contact" class="py-24 text-center">
 <h2 class="text-4xl font-bold mb-6">Let's Build Something</h2>
 <p class="text-slate-400 mb-8">Available for freelance & AI projects</p>
-<a href="mailto:your@email.com" class="px-8 py-3 bg-sky-500 rounded-full glow">Contact Me</a>
+
+<form id="contactForm" class="max-w-xl mx-auto space-y-4">
+<input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+<input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10">
+<textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 rounded-lg bg-white/5 border border-white/10"></textarea>
+
+<!-- Honeypot (anti-spam) -->
+<input type="text" name="_gotcha" style="display:none">
+
+<button id="submitBtn" type="submit" class="w-full bg-sky-500 hover:bg-sky-600 py-3 rounded-lg font-bold flex items-center justify-center gap-2">
+<span id="btnText">Start a Project 🚀</span>
+<span id="btnSpinner" class="spinner hidden"></span>
+</button>
+</form>
+
+<!-- Success Popup -->
+<div id="successPopup" class="fixed inset-0 flex items-center justify-center bg-black/50 hidden">
+<div class="bg-slate-900 p-8 rounded-xl text-center border border-white/10">
+<h3 class="text-2xl font-bold text-green-400 mb-2">Message Sent 🚀</h3>
+<p class="text-slate-400">I'll get back to you soon.</p>
+</div>
+</div>
+
 </section>
 
-<footer class="text-center py-8 text-slate-500 text-sm">
-© 2026 Muhammad Bilal — Built Different ⚡
-</footer>
+<footer class="text-center py-8 text-slate-500 text-sm">© 2026 Muhammad Bilal — Built Different ⚡</footer>
+
+<script>
+const form = document.getElementById('contactForm');
+const popup = document.getElementById('successPopup');
+const btn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const spinner = document.getElementById('btnSpinner');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btn.disabled = true;
+    spinner.classList.remove('hidden');
+    btnText.textContent = 'Sending...';
+
+    const data = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/xnjovqoj', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+        spinner.classList.add('hidden');
+        btnText.textContent = 'Sent ✅';
+        popup.classList.remove('hidden');
+        form.reset();
+
+        setTimeout(() => {
+            popup.classList.add('hidden');
+            btn.disabled = false;
+            btnText.textContent = 'Start a Project 🚀';
+        }, 3000);
+    } else {
+        alert('Something went wrong. Try again.');
+        btn.disabled = false;
+        spinner.classList.add('hidden');
+        btnText.textContent = 'Start a Project 🚀';
+    }
+});
+</script>
 
 </body>
 </html>
